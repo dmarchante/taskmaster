@@ -5,6 +5,8 @@
 *.apk
 *.ap_
 
+*.elasticbeanstalk/
+
 # Files for the ART/Dalvik VM
 *.dex
 
