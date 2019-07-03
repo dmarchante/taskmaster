@@ -11,7 +11,7 @@ import java.util.UUID;
 public class Tasks {
     private UUID id;
     private String description;
-    private String status;
+    private String status = "Available";
     private String title;
 
 
