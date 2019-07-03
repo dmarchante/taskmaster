@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tasks Page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <h1>Tasks Page</h1>
+    <!--<p th:text="${test}"></p>-->
+    <div th:each="task : ${tasks}">
+        Title: <p th:text="${task.title}"></p>
+        Description: <p th:text="${task.description}"></p>
+        Status: <p th:text="${task.status}"></p>
+
+        <form th:action="@{'/tasks/' + ${task.id} + '/state'}" method="PUT">
+            <input type="button" value="Update Status">
+        </form>
+        <!--<a th:href="@{'/tasks/' + ${task.id} + '/state'}">Update Status</a>-->
+    </div>
+    <form action="/tasks" method="POST">
+        <input name="title" id="title" placeholder="Title">
+        <input name="description" id="description" placeholder="Description">
+        <input type="submit" />
+    </form>
+</body>
+</html>
