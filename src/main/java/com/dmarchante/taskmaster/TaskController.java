@@ -1,6 +1,8 @@
 package com.dmarchante.taskmaster;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -61,4 +63,11 @@ public class TaskController {
 //        Tasks task = taskRepository.findById(id).get();
 //
 //    }
+
+    @DeleteMapping("/tasks/{id}")
+    public ResponseEntity<UUID> deleteTask(@PathVariable UUID id) {
+        taskRepository.deleteById(id);
+
+        return new ResponseEntity<>(id, HttpStatus.OK);
+    }
 }
