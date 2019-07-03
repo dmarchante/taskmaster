@@ -6,6 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.util.UUID;
+
 @RestController
 public class TaskController {
     @Autowired
@@ -37,7 +39,7 @@ public class TaskController {
     }
 
     @PutMapping("/tasks/{id}/state")
-    public Tasks updateStatus(@PathVariable String id, Model m) {
+    public Tasks updateStatus(@PathVariable UUID id, Model m) {
         Tasks task = taskRepository.findById(id).get();
 
         if (task.getStatus().equals("Available")) {
