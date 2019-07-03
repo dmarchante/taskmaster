@@ -10,14 +10,15 @@ import java.util.UUID;
 @DynamoDBTable(tableName = "taskmaster")
 public class Tasks {
     private UUID id;
+    private String assignee;
     private String description;
     private String status = "Available";
     private String title;
 
-
     public Tasks() {};
 
-    public Tasks(String description, String status, String title) {
+    public Tasks(String assignee, String description, String status, String title) {
+        this.assignee = assignee;
         this.description = description;
         this.status = status;
         this.title = title;
@@ -28,6 +29,9 @@ public class Tasks {
     public UUID getId() {
         return id;
     }
+
+    @DynamoDBAttribute
+    public String getAssignee() { return assignee; }
 
     @DynamoDBAttribute
     public String getDescription() { return description; }
@@ -45,4 +49,9 @@ public class Tasks {
     public void setStatus(String status) { this.status = status; }
 
     public void setTitle(String title) { this.title = title; }
+
+    public void setAssignee(String assignee) {
+        this.assignee = assignee;
+        this.setStatus("Assigned");
+    }
 }
