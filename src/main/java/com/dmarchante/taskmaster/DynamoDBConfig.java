@@ -33,7 +33,7 @@ public class DynamoDBConfig {
             amazonDynamoDB.setEndpoint(amazonDynamoDBEndpoint);
         }
 
-        amazonDynamoDB.setRegion(Region.getRegion(Regions.US_WEST_2));
+        amazonDynamoDB.setRegion(Region.getRegion(Regions.US_EAST_1));
         return amazonDynamoDB;
     }
 

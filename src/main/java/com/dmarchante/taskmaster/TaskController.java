@@ -34,6 +34,12 @@ public class TaskController {
         return tasks;
     }
 
+    @GetMapping("/tasks/{id}")
+    public Tasks getTaskById(@PathVariable UUID id) {
+        Tasks task = taskRepository.findById(id).get();
+        return task;
+    }
+
     @PostMapping("/tasks")
     public Tasks postTasks(String assignee, String description, String status, String title) {
         Tasks task = new Tasks();
@@ -86,18 +92,11 @@ public class TaskController {
 
     @PostMapping("/tasks/{id}/images")
     public Tasks uploadFile(
-            @RequestParam("assignee") String assignee,
-            @RequestParam("description") String description,
-            @RequestParam("status") String status,
-            @RequestParam("title") String title,
+            @PathVariable UUID id,
             @RequestPart(value = "file") MultipartFile file
     ){
         String pic = this.s3Client.uploadFile(file);
-        Tasks task = new Tasks();
-        task.setAssignee(assignee);
-        task.setDescription(description);
-        task.setStatus(status);
-        task.setTitle(title);
+        Tasks task = taskRepository.findById(id).get();
         task.setPic(pic);
         taskRepository.save(task);
         return task;

@@ -7,7 +7,7 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 
 import java.util.UUID;
 
-@DynamoDBTable(tableName = "taskmaster")
+@DynamoDBTable(tableName = "cdmarch-taskmaster")
 public class Tasks {
     private UUID id;
     private String assignee;
