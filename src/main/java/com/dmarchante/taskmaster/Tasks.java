@@ -12,14 +12,16 @@ public class Tasks {
     private UUID id;
     private String assignee;
     private String description;
+    private String pic;
     private String status = "Available";
     private String title;
 
     public Tasks() {};
 
-    public Tasks(String assignee, String description, String status, String title) {
+    public Tasks(String assignee, String description, String pic, String status, String title) {
         this.assignee = assignee;
         this.description = description;
+        this.pic = pic;
         this.status = status;
         this.title = title;
     }
@@ -37,6 +39,9 @@ public class Tasks {
     public String getDescription() { return description; }
 
     @DynamoDBAttribute
+    public String getPic() { return pic; }
+
+    @DynamoDBAttribute
     public String getStatus() { return status; }
 
     @DynamoDBAttribute
@@ -45,6 +50,8 @@ public class Tasks {
     public void setId(UUID id) { this.id = id; }
 
     public void setDescription(String description) { this.description = description; }
+
+    public void setPic(String pic) { this.pic = pic; }
 
     public void setStatus(String status) { this.status = status; }
 
