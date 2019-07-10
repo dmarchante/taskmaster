@@ -13,15 +13,17 @@ public class Tasks {
     private String assignee;
     private String description;
     private String pic;
+    private String resizedPic;
     private String status = "Available";
     private String title;
 
     public Tasks() {};
 
-    public Tasks(String assignee, String description, String pic, String status, String title) {
+    public Tasks(String assignee, String description, String pic, String resizedPic, String status, String title) {
         this.assignee = assignee;
         this.description = description;
         this.pic = pic;
+        this.resizedPic = resizedPic;
         this.status = status;
         this.title = title;
     }
@@ -42,6 +44,9 @@ public class Tasks {
     public String getPic() { return pic; }
 
     @DynamoDBAttribute
+    public String getResizedPic() { return resizedPic; }
+
+    @DynamoDBAttribute
     public String getStatus() { return status; }
 
     @DynamoDBAttribute
@@ -52,6 +57,8 @@ public class Tasks {
     public void setDescription(String description) { this.description = description; }
 
     public void setPic(String pic) { this.pic = pic; }
+
+    public void setResizedPic(String resizedPic) { this.resizedPic = resizedPic; }
 
     public void setStatus(String status) { this.status = status; }
 
