@@ -98,7 +98,7 @@ public class TaskController {
         String pic = this.s3Client.uploadFile(file);
         Tasks task = taskRepository.findById(id).get();
         task.setPic(pic);
-        task.setResizedPic("http://cdmarch-taskmaster-fe-uploads-resize.s3-us-west-2.amazonaws.com/resized-" + pic);
+        task.setResizedPic("http://cdmarch-taskmaster-fe-uploads-resize.s3-us-west-2.amazonaws.com/resized-" + pic.substring(64));
         taskRepository.save(task);
         return task;
     }
