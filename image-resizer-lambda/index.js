@@ -1,3 +1,5 @@
+// reference: https://docs.aws.amazon.com/lambda/latest/dg/with-s3-example.html
+
 // dependencies
 const async = require('async');
 const AWS = require('aws-sdk');
