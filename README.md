@@ -25,5 +25,5 @@ Hit play from IntelliJ
 
 ## Screenshots for Monitoring
 ![Cloudwatch Metrics](./docs/assets/cloudwatch-metrics.png)
-[Cloudwatch Rules](./docs/assets/cloudwatch-rules.png)
-[ECS Cronjob Metrics](./docs/assets/ecs-metrics.jpg)
+![Cloudwatch Rules](./docs/assets/cloudwatch-rules.png)
+![ECS Cronjob Metrics](./docs/assets/ecs-metrics.jpg)
