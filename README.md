@@ -24,6 +24,6 @@ Hit play from IntelliJ
 - added logic to set status to assigned when assignee is added
 
 ## Screenshots for Monitoring
-[![Cloudwatch Metrics](./docs/assets/cloudwatch-metrics.png)]
+![Cloudwatch Metrics](./docs/assets/cloudwatch-metrics.png)
 [Cloudwatch Rules](./docs/assets/cloudwatch-rules.png)
 [ECS Cronjob Metrics](./docs/assets/ecs-metrics.jpg)
