@@ -27,3 +27,8 @@ Hit play from IntelliJ
 ![Cloudwatch Metrics](./docs/assets/cloudwatch-metrics.png)
 ![Cloudwatch Rules](./docs/assets/cloudwatch-rules.png)
 ![ECS Cronjob Metrics](./docs/assets/ecs-metrics.png)
+
+
+## Dynamo Screenshots
+![Lambda with Dynamo function](./docs/assets/lambdadb-fn.png)
+![Lambda with Dynamo Result](./docs/assets/lambdadb-res.png)
